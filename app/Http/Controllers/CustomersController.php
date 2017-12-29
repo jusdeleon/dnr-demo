@@ -38,7 +38,11 @@ class CustomersController extends Controller
 
     public function edit(User $customer)
     {
-        return view('customers.edit', compact('customer'));
+        $picture = $customer->getMedia()->first();
+
+        $pictureUrl = $picture ? $picture->getUrl('thumb') : asset('img/user.png');
+
+        return view('customers.edit', compact('customer', 'pictureUrl'));
     }
 
     public function update(User $customer)
@@ -55,6 +59,15 @@ class CustomersController extends Controller
         $customer->update($data);
 
         return redirect()->route('customers.index')->with('success', 'Successfully updated customer.');
+    }
+
+    public function uploadPicture(User $customer)
+    {
+        $customer->clearMediaCollection();
+
+        $customer->addMediaFromRequest('picture')->toMediaCollection();
+
+        return back()->with('success', 'Successfully uploaded picture.');
     }
 
     public function destroy(User $customer)

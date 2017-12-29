@@ -18,5 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['role:admin']], function () {
+    Route::put('customers/{customer}/picture', 'CustomersController@uploadPicture')->name('customers.upload.picture');
     Route::resource('customers', 'CustomersController');
 });
