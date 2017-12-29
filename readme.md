@@ -1,6 +1,7 @@
 ## Prerequisites
 
 This guide assumes that you have these software installed on your machine:
+
 - [PHP 7+](http://php.net/downloads.php)
 - [Composer](https://getcomposer.org/download)
 - [MySQL 5.7+](https://www.mysql.com/downloads)
