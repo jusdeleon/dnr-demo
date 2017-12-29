@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @include('common.message')
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
+                @include('common.message')
                 <a class="btn btn-success btn-sm" role="button" href="{{ route('customers.create') }}">Add</a>
                 <div class="table-responsive">
                     <table class="table">
