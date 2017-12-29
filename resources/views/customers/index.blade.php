@@ -30,7 +30,7 @@
                                 <td>{{ $customer->last_name }}</td>
                                 <td>{{ $customer->email }}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-sm">Edit</button>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('customers.edit', $customer) }}" role="button">Edit</a>
                                     <form method="POST" action="{{ route('customers.destroy', $customer) }}" style="display: inline">
                                         {!! method_field('DELETE') !!}
                                         {!! csrf_field() !!}

@@ -36,6 +36,27 @@ class CustomersController extends Controller
         return redirect()->route('customers.index')->with('success', 'Successfully added customer.');
     }
 
+    public function edit(User $customer)
+    {
+        return view('customers.edit', compact('customer'));
+    }
+
+    public function update(User $customer)
+    {
+        $data = request()->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'phone_number' => 'required|msisdn', // Accept PH formats only for simplicity
+            'email' => "required|string|email|max:255|unique:users,id,$customer->id",
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $customer->update($data);
+
+        return redirect()->route('customers.index')->with('success', 'Successfully updated customer.');
+    }
+
     public function destroy(User $customer)
     {
         $customer->delete();
