@@ -9,7 +9,7 @@ This guide assumes that you have these software installed on your machine:
 
 ## Installation
 
-cd to the project root directory and run the commands below:
+Clone this repository, then cd to the project root directory and run the commands below:
 
 - Install Composer dependencies by running `composer install`
 - Create the app's environment file by running `cp .env.example .env`
