@@ -31,7 +31,11 @@
                                 <td>{{ $customer->email }}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm">Edit</button>
-                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                    <form method="POST" action="{{ route('customers.destroy', $customer) }}" style="display: inline">
+                                        {!! method_field('DELETE') !!}
+                                        {!! csrf_field() !!}
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty
