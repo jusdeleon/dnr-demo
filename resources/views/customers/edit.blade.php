@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                @include('common.message')
+            </div>
             <div class="col-md-4">
                 <div class="panel panel-default text-center" style="padding: 20px">
                     {!! Form::open(['route' => ['customers.upload.picture', $customer], 'method' => 'PUT', 'files' => true]) !!}

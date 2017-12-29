@@ -62,7 +62,7 @@ class CustomersController extends Controller
 
         $customer->update($data);
 
-        return redirect()->route('customers.index')->with('success', 'Successfully updated customer.');
+        return back()->with('success', 'Successfully updated customer.');
     }
 
     public function uploadPicture(User $customer)

@@ -3,12 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @if (session()->has('success'))
-            <div class="alert alert-warning alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                {!! session('success') !!}
-            </div>
-            @endif
+            @include('common.message')
             <div class="col-md-8 col-md-offset-2">
                 <a class="btn btn-success btn-sm" role="button" href="{{ route('customers.create') }}">Add</a>
                 <div class="table-responsive">
