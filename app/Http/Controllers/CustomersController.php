@@ -31,6 +31,8 @@ class CustomersController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
+        $data['password'] = bcrypt($data['password']);
+
         tap(User::create($data))->assignRole('customer');
 
         return redirect()->route('customers.index')->with('success', 'Successfully added customer.');
@@ -55,6 +57,8 @@ class CustomersController extends Controller
             'email' => "required|string|email|max:255|unique:users,id,$customer->id",
             'password' => 'required|string|min:6|confirmed',
         ]);
+
+        $data['password'] = bcrypt($data['password']);
 
         $customer->update($data);
 
