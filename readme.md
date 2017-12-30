@@ -31,6 +31,6 @@ You can leave the other items as is.
 
 Finally, run `php artisan migrate --seed` to migrate the database and seed the user roles.
 
-To view the app in the browser, run `php artisan serve --port=8000`. Access it via `localhost:8000`.
+To view the app in the browser, run `php artisan serve --port=8000`. Access it via `localhost:8000`. (If you decide to serve the app in another way, please make sure to set the `APP_URL` to the correct value. Failing to do so will result an error in rendering customer images)
 
-If you experience any errors while deploying the app, send me a message at jusmdeleon@gmail.com.
+If you experience any errors while deploying the app, send me a message at <jusmdeleon@gmail.com>.
